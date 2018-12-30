@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
+from . import views
 
 urlpatterns = [
-    path('/', admin.site.urls),
-    path('scantron/', include('scantron.urls')),
+    path('', views.index, name='scantron.index'),
 ]

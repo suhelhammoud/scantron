@@ -1,9 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator
 
-# Create your models here.
-
-
 class Faculty(models.Model):
     title = models.CharField(max_length=200)
 
@@ -52,13 +49,15 @@ class Question(models.Model):
 
     q_number = models.PositiveSmallIntegerField(
         choices=Q_NUMBERS,
-        default=1
-    )
+        default=1)
+    mark = models.DecimalField(
+        decimal_places=4, 
+        max_digits=6,
+        default=1)
     answer = models.CharField(
         max_length=1,
         choices=A_CHOICES,
-        default= D
-    )
+        default= D)
 
     def __str__(self):
-        return f"{self.q_number}, {self.answer}"
+        return f"{self.q_number}, {self.answer}, mark:{self.mark}"
