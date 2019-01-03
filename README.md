@@ -49,7 +49,7 @@ Screenshots of current tests:
 
 <img src="docs/images/admin_model.png">
 
-<img src="docs/images/export_using_admin.png">
+<img src="docs/images/export_using_admin_action.png">
 
 <img src="docs/images/import_export.png">
 
