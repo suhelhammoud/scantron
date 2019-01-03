@@ -45,14 +45,14 @@ $python manage.py test
 ```
 
 Screenshots of current tests:
-<img src="docs/images/admin.png">
+<img src="docs/images/admin.png" width="600px">
 
-<img src="docs/images/admin_model.png">
+<img src="docs/images/admin_model.png" width="600px">
 
-<img src="docs/images/export_using_admin_action.png">
+<img src="docs/images/export_using_admin_action.png" width="600px">
 
-<img src="docs/images/import_export.png">
+<img src="docs/images/import_export.png" width="600px">
 
-<img src="docs/images/sample_std_detials.png">
+<img src="docs/images/sample_std_detials.png" width="600px">
 
-<img src="docs/images/sample_rest.png">
+<img src="docs/images/sample_rest.png" width="600px">
