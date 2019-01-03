@@ -1,5 +1,6 @@
 
-    # # q0 = models.CharField(max_length=1,choices=Question.A_CHOICES,null=True, default="", blank=True)
+    # TODO delete  
+    # q0 = models.CharField(max_length=1,choices=Question.A_CHOICES,null=True, default="", blank=True)
     # q1 = models.CharField(max_length=1,choices=Question.A_CHOICES, null=True, default="", blank=True)
     # q2 = models.CharField(max_length=1,choices=Question.A_CHOICES,null=True, default="", blank=True)
     # q3 = models.CharField(max_length=1,choices=Question.A_CHOICES,null=True, default="", blank=True)

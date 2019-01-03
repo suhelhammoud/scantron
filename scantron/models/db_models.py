@@ -3,9 +3,10 @@ from django.core.validators import MinValueValidator
 
 class Faculty(models.Model):
     name = models.CharField(max_length=200)
-
+    
     class Meta:
         verbose_name_plural = "faculties"
+    
     def __str__(self):
         return self.name
 
@@ -71,7 +72,6 @@ class Student(models.Model):
 #         return f"{self.q_number}, {self.answer}, mark:{self.mark}"
     
    
-    
 
 # class Exam(models.Model):
 #     module = models.ForeignKey(Module, on_delete=models.PROTECT)

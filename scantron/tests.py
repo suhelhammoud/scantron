@@ -2,8 +2,8 @@ from django.test import TestCase
 from .resources import StudentResource
 from .models import Student
 
-
-class StudetTest(TestCase):
+# TODO modify code to do REAL testing
+class StudetTest(TestCase): 
     def setUp(self):
         Student.objects.create(name="Sami", std_id = "2011300")
         Student.objects.create(name="Ahmad", std_id = "2011500")
@@ -14,4 +14,4 @@ class StudetTest(TestCase):
         ds = StudentResource().export()
         print(ds.json)
         print(ds.csv)
-        self.assertEqual('Sami' , 'Sami') # TODO
+        self.assertEqual('Sami' , 'Sami') # 
