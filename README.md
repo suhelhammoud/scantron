@@ -44,7 +44,7 @@ $python manage.py runserver 9090
 $python manage.py test
 ```
 
-Screenshots of current tests:
+Screenshots of current admin functions:
 
 <img src="docs/images/admin.png" width="600px">
 
