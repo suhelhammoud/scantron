@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'scantron.apps.ScantronConfig',
+    'import_export',
 ]
 
 MIDDLEWARE = [

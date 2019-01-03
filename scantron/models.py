@@ -36,14 +36,14 @@ class Teacher(models.Model):
 
 class Student(models.Model):
     std_id = models.IntegerField()
-    fname = models.CharField(max_length=200)
-    lname = models.CharField(max_length=200)
-    father = models.CharField(max_length=200)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE)
-    dob = models.DateField()
+    name = models.CharField(max_length=200)
+    department = models.ForeignKey(Department, 
+        null=True,
+        on_delete=models.CASCADE)
+    dob = models.DateField(null=True)
 
     def __str__(self):
-        return f"Student({self.std_id}, {self.fname} {self.lname}, {self.department})"
+        return f"Student({self.std_id}, {self.name}, {self.department})"
 
 
 class Question(models.Model):
