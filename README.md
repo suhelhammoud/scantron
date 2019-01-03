@@ -45,6 +45,7 @@ $python manage.py test
 ```
 
 Screenshots of current tests:
+
 <img src="docs/images/admin.png" width="600px">
 
 <img src="docs/images/admin_model.png" width="600px">
