@@ -10,6 +10,8 @@ class Paper(models.Model):
         default="Add name to paper here")
 
     id_number = models.PositiveSmallIntegerField(default=0)
+    num_questions = models.PositiveSmallIntegerField(default=50)
+
     p_type = models.CharField(
         max_length=1,
         choices=[("A", "A"), ("B", "B"), ("C", "C"),("D", "D"), ("E", "E"), ("", "")],
@@ -44,6 +46,7 @@ class PQuestion(models.Model):
         default= "D")
     
     class Meta:
+        verbose_name_plural = "questions"
         ordering = ['q_number']
 
     def __str__(self):

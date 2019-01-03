@@ -48,27 +48,27 @@ class Student(models.Model):
         return f"Student({self.id}, {self.name}, {self.department})"
 
 
-class Question(models.Model):
-    #Constants
-    A_CHOICES = [("A", "A"), ("B", "B"), ("C", "C"),("D", "D"), ("E", "E"), ("", "")]
+# class Question(models.Model):
+#     #Constants
+#     A_CHOICES = [("A", "A"), ("B", "B"), ("C", "C"),("D", "D"), ("E", "E"), ("", "")]
 
-    #Number range
-    Q_NUMBERS = zip(range(1, 201), range(1, 201)) 
+#     #Number range
+#     Q_NUMBERS = zip(range(1, 201), range(1, 201)) 
 
-    q_number = models.PositiveSmallIntegerField(
-        choices=Q_NUMBERS,
-        default=1)
-    mark = models.DecimalField(
-        decimal_places=4, 
-        max_digits=6,
-        default=1)
-    answer = models.CharField(
-        max_length=1,
-        choices=A_CHOICES,
-        default= "D")
+#     q_number = models.PositiveSmallIntegerField(
+#         choices=Q_NUMBERS,
+#         default=1)
+#     mark = models.DecimalField(
+#         decimal_places=4, 
+#         max_digits=6,
+#         default=1)
+#     answer = models.CharField(
+#         max_length=1,
+#         choices=A_CHOICES,
+#         default= "D")
 
-    def __str__(self):
-        return f"{self.q_number}, {self.answer}, mark:{self.mark}"
+#     def __str__(self):
+#         return f"{self.q_number}, {self.answer}, mark:{self.mark}"
     
    
     
