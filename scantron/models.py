@@ -25,6 +25,15 @@ class Module(models.Model):
         return f"Module( {self.title}, {self.department})"
 
 
+class Teacher(models.Model):
+    name = models.CharField(max_length=200)
+    department = models.ForeignKey(Department, on_delete=models.PROTECT)
+    last_logged_in = models.DateTimeField('last logged in')
+
+    def __str__(self):
+        return self.name
+
+
 class Student(models.Model):
     std_id = models.IntegerField()
     fname = models.CharField(max_length=200)
@@ -38,14 +47,12 @@ class Student(models.Model):
 
 
 class Question(models.Model):
-    # constants 
-    A = "A"
-    B = "B"
-    C = "C"
-    D = "D"
-    E = "E"
-    A_CHOICES = [(A, "A"), (B, "B"), (C, "C"), (D, "D"), (E, "E")]
-    Q_NUMBERS = zip(range(1, 201), range(1, 201))
+    #Constants
+    A_CHOICES = [("A", "A"), ("B", "B"), ("C", "C"),
+     ("D", "D"), ("E", "E")]
+
+    #Number range
+    Q_NUMBERS = zip(range(1, 201), range(1, 201)) 
 
     q_number = models.PositiveSmallIntegerField(
         choices=Q_NUMBERS,
@@ -57,7 +64,15 @@ class Question(models.Model):
     answer = models.CharField(
         max_length=1,
         choices=A_CHOICES,
-        default= D)
+        default= "D")
 
     def __str__(self):
         return f"{self.q_number}, {self.answer}, mark:{self.mark}"
+
+    
+
+class Exam(models.Model):
+    module = models.ForeignKey(Module, on_delete=models.PROTECT)
+    # user = models.ForeignKey(User)
+
+# class 
