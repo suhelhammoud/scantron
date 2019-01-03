@@ -12,5 +12,6 @@ class StudetTest(TestCase):
     def test_student_export(self):
         """Student Resource"""
         ds = StudentResource().export()
-        print(ds)
+        print(ds.json)
+        print(ds.csv)
         self.assertEqual('Sami' , 'Sami') # TODO

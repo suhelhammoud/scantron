@@ -2,40 +2,42 @@ from django.db import models
 from django.core.validators import MinValueValidator
 
 class Faculty(models.Model):
-    title = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
 
+    class Meta:
+        verbose_name_plural = "faculties"
     def __str__(self):
-        return self.title
+        return self.name
 
 
 class Department(models.Model):
     faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
 
     def __str__(self):
-        return f"Dept. of {self.title}, TFaculty of {self.faculty}"
+        return f"Dept. of {self.name}, TFaculty of {self.faculty}"
 
 
 class Module(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
     code = models.CharField(max_length=200)
 
     def __str__(self):
-        return f"Module( {self.title}, {self.department})"
+        return f"Module( {self.name}, {self.department})"
 
 
 class Teacher(models.Model):
     name = models.CharField(max_length=200)
     department = models.ForeignKey(Department, on_delete=models.PROTECT)
-    last_logged_in = models.DateTimeField('last logged in')
+    last_logged_in = models.DateTimeField('last logged in', null=True)
 
     def __str__(self):
         return self.name
 
 
 class Student(models.Model):
-    std_id = models.IntegerField()
+    id = models.PositiveSmallIntegerField(primary_key=True)
     name = models.CharField(max_length=200)
     department = models.ForeignKey(Department, 
         null=True,
@@ -43,13 +45,12 @@ class Student(models.Model):
     dob = models.DateField(null=True)
 
     def __str__(self):
-        return f"Student({self.std_id}, {self.name}, {self.department})"
+        return f"Student({self.id}, {self.name}, {self.department})"
 
 
 class Question(models.Model):
     #Constants
-    A_CHOICES = [("A", "A"), ("B", "B"), ("C", "C"),
-     ("D", "D"), ("E", "E")]
+    A_CHOICES = [("A", "A"), ("B", "B"), ("C", "C"),("D", "D"), ("E", "E"), ("", "")]
 
     #Number range
     Q_NUMBERS = zip(range(1, 201), range(1, 201)) 
@@ -68,11 +69,15 @@ class Question(models.Model):
 
     def __str__(self):
         return f"{self.q_number}, {self.answer}, mark:{self.mark}"
-
+    
+   
     
 
-class Exam(models.Model):
-    module = models.ForeignKey(Module, on_delete=models.PROTECT)
+# class Exam(models.Model):
+#     module = models.ForeignKey(Module, on_delete=models.PROTECT)
+#     teacher = models.ForeignKey(Teacher, on_delete=models.PROTECT)
+    # pub_data = models.DateTimeField()
+
     # user = models.ForeignKey(User)
 
 # class 
